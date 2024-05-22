@@ -18,7 +18,14 @@ function deleteLastChar() {
 function calculate() {
     try {
         const display = document.getElementById('display');
-        display.value = eval(display.value);
+        const result = eval(display.value);
+        display.value = result;
+
+        // Save the calculation to localStorage
+        saveCalculation(display.value);
+
+        // Update last three calculations in the UI
+        updateLastCalculationsUI();
     } catch (e) {
         display.value = 'Error';
     }
@@ -40,6 +47,38 @@ function buttonClicked(button) {
     }, 100);
 }
 
+function saveCalculation(calculation) {
+    let calculations = JSON.parse(localStorage.getItem('calculations')) || [];
+    calculations.push(calculation);
+    if (calculations.length > 3) {
+        calculations.shift();
+    }
+    localStorage.setItem('calculations', JSON.stringify(calculations));
+}
+
+function loadCalculations() {
+    let calculations = JSON.parse(localStorage.getItem('calculations')) || [];
+    return calculations;
+}
+
+function updateLastCalculationsUI() {
+    const lastCalculationsList = document.getElementById('lastCalculations');
+    lastCalculationsList.innerHTML = ''; // Clear previous calculations
+
+    const calculations = loadCalculations();
+    calculations.forEach(calculation => {
+        const listItem = document.createElement('li');
+        listItem.textContent = calculation;
+        lastCalculationsList.appendChild(listItem);
+    });
+}
+
+// Load calculations when the page loads
+window.onload = function() {
+    updateLastCalculationsUI();
+};
+
+// Keyboard integration
 document.addEventListener('keydown', (event) => {
     const key = event.key;
     const buttonMap = {

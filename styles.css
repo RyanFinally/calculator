@@ -1,21 +1,22 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('https://science.nasa.gov/wp-content/uploads/2023/09/Barred_Spiral_Galaxy_NGC_1300.jpeg?w=1536&format=webp'); /* URL to a galaxy image */
+    background-image: url('https://science.nasa.gov/wp-content/uploads/2023/09/Barred_Spiral_Galaxy_NGC_1300.jpeg?w=1536&format=webp.jpg'); /* Replace 'galaxy.jpg' with the path to your galaxy background image */
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency by changing the alpha value (0.7) */
+    margin: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    align-items: center; /* Center vertically */
 }
 
 .calculator {
-    background-color: rgba(255, 255, 255, 0.7); /* semi-transparent background */
+    margin: 20px auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust the transparency by changing the alpha value (0.7) */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 #display {
@@ -55,22 +56,27 @@ body {
     transform: scale(0.9);
 }
 
-@keyframes zoomOut {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(0.9);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.btn.zoom-out {
-    animation: zoomOut 0.1s;
-}
-
 .span-two {
     grid-column: span 2;
+}
+
+.last-calculations {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust the transparency by changing the alpha value (0.7) */
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.last-calculations h2 {
+    font-size: 20px;
+}
+
+.last-calculations ul {
+    list-style: none;
+    padding: 0;
+}
+
+.last-calculations li {
+    margin-bottom: 5px;
 }
