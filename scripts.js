@@ -122,3 +122,16 @@ document.addEventListener('keydown', (event) => {
         }
     }
 });
+
+
+function toggleTheme() {
+    const calculator = document.querySelector('.calculator');
+    const themeButton = document.getElementById('themeSwitcher');
+    if (calculator.classList.contains('dark-theme')) {
+        calculator.classList.remove('dark-theme');
+        themeButton.innerHTML = '<i class="far fa-sun"></i>';
+    } else {
+        calculator.classList.add('dark-theme');
+        themeButton.innerHTML = '<i class="far fa-moon"></i>';
+    }
+}

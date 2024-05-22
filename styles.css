@@ -3,7 +3,7 @@ body {
     background-image: url('https://science.nasa.gov/wp-content/uploads/2023/09/Barred_Spiral_Galaxy_NGC_1300.jpeg?w=1536&format=webp.jpg'); /* Replace 'galaxy.jpg' with the path to your galaxy background image */
     background-size: cover;
     background-attachment: fixed;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency by changing the alpha value (0.7) */
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the transparency by changing the alpha value (0.7) */
     margin: 0;
     height: 100vh;
     display: flex;
@@ -14,7 +14,7 @@ body {
 .calculator {
     margin: 20px auto;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.5); /* Adjust the transparency by changing the alpha value (0.7) */
+    background-color: rgba(255, 255, 255, 0.7); /* Adjust the transparency by changing the alpha value (0.7) */
     padding: 20px;
     border-radius: 10px;
 }
@@ -62,7 +62,7 @@ body {
 
 .last-calculations {
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.5); /* Adjust the transparency by changing the alpha value (0.7) */
+    background-color: rgba(255, 255, 255, 0.7); /* Adjust the transparency by changing the alpha value (0.7) */
     padding: 10px;
     border-radius: 10px;
     text-align: center;
@@ -79,4 +79,40 @@ body {
 
 .last-calculations li {
     margin-bottom: 5px;
+}
+
+
+/* Dark Theme */
+.dark-theme {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+#themeSwitcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #007bff; /* Default button color */
+    color: #fff; /* Default text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.dark-theme #themeSwitcher {
+    background-color: #333; /* Dark mode button color */
+}
+
+#themeSwitcher:hover {
+    background-color: #0056b3; /* Button color on hover */
+}
+
+#themeSwitcher:active {
+    transform: scale(0.9);
+}
+
+.dark-theme #display {
+    background-color: #f3ecece5; /* Brighter background color for display in dark mode */
+    color: #201e1e; /* Dark text color for display */
 }
